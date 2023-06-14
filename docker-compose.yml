@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  external_service:
+    build: ./external_service
+    ports:
+      - 3000:3000
+    depends_on:
+      - auth_service
+    networks:
+      - my-network
+  
+  auth_service:
+    build: ./auth_service
+    ports:
+      - 3001:3001
+    depends_on:
+      - user_service
+    networks:
+      - my-network
+
+  user_service:
+    build: ./user_service
+    ports:
+      - 3002:3002
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

@@ -1,0 +1,13 @@
+{
+  "name": "external_service",
+  "version": "1.0.0",
+  "description": "My app",
+  "main": "external_service.js",
+  "scripts": {
+    "start": "node external_service.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "request": "^2.88.2"
+  }
+}
